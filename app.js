@@ -18,7 +18,7 @@ app.use('/api/santri', santriRoutes)
 app.use('/api/user', userRoutes)
 
 // connect to DB
-mongoose.connect(process.env.DB_CONNECTION, 
+mongoose.connect('mongodb+srv://admin:admin@cluster0.yur1ore.mongodb.net/?retryWrites=true&w=majority', 
     { useNewUrlParser: true, useUnifiedTopology: true })
 let db = mongoose.connection
 
@@ -28,6 +28,6 @@ db.once('open', () => {
 })
 
 // listen
-app.listen(process.env.PORT, () => {
-    console.log(`Server running in ${process.env.PORT}`)
+app.listen('8080', () => {
+    console.log(`Server running in 8080`)
 })
